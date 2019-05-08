@@ -37,9 +37,11 @@ TYAN is a preprocessor for JSON that improves the existing architecture for your
 ```python
 import tyan
 
-text = "{
+text = "
+{
     ["dogs", "cats", "people"]: "animals"
-}"
+}
+"
 
 dirt_object = tyan.load_file('settings.tyan')
 dirt_object = tyan.loads(text)
