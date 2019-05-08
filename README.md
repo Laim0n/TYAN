@@ -1,5 +1,5 @@
 # TYAN
-TYAN is a preprocessor for JSON that improves the existing architecture for your happiness and is written in Python.
+TYAN is a preprocessor for JSON that improves the existing architecture for your happiness and is written in Python. The code is stored in the format **.tyan**.
 
 ### Syntax
 ***TYAN code:***
