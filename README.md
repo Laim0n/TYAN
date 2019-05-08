@@ -43,7 +43,7 @@ text = "
 }
 "
 
-dirt_object = tyan.load_file('settings.tyan')
+# dirt_object = tyan.load_file('settings.tyan')
 dirt_object = tyan.loads(text)
 string_json = tyan.convert_json_to_tyan(text)
 
