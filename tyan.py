@@ -16,6 +16,10 @@ def load_file(path):
 
 
 def loads(data):
+    return json.loads(convert_json_to_tyan(data))
+
+    
+def convert_json_to_tyan(data):
     data = re.sub(r'\s+', ' ', data)
 
     warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -35,7 +39,4 @@ def loads(data):
                 result = result[:-1]
             data = data.replace(element, result)
 
-        return json.loads(data)
-
-    else:
-        return json.loads(data)
+    return data
