@@ -18,24 +18,23 @@ def load_file(path):
 def loads(data):
     return json.loads(convert_json_to_tyan(data))
 
-    
-def convert_json_to_tyan(data):
-    data = re.sub(r'\s+', ' ', data)
 
+def convert_json_to_tyan(data):
     warnings.simplefilter(action='ignore', category=FutureWarning)
     reg = re.compile('([[] ?((["\'].+["\'])+ ?,? ?)+[]] ?: ?["\'].+["\'] ?,?)')
 
     if bool(reg.search(data)):
         data_list = reg.findall(data)
         for element in data_list:
-            elm = element
             element = element[0]
-            texts = re.findall('["\'](.+)["\']', element)
+            texts = re.findall('["\']([^:,]+)["\']', element)
             result = ""
             for text in texts:
-                result += "\"{0}\": \"{1}\",".format(text, texts[2])
+                if text == texts[-1]:
+                    continue
+                result += "\"{0}\": \"{1}\",".format(text, texts[-1])
 
-            if data_list.index(elm) == int(len(data_list) - 1):
+            if element[-1:] != ",":
                 result = result[:-1]
             data = data.replace(element, result)
 
