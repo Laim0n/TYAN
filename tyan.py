@@ -16,7 +16,7 @@ def load_file(path):
 
 
 def loads(data):
-    return json.loads(convert_json_to_tyan(data))
+    return json.loads(convert_tyan_to_json(data))
 
 
 def convert_tyan_to_json(data):
