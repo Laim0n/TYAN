@@ -45,7 +45,7 @@ text = "
 
 # dirt_object = tyan.load_file('settings.tyan')
 dirt_object = tyan.loads(text)
-string_json = tyan.convert_json_to_tyan(text)
+string_json = tyan.convert_tyan_to_json(text)
 
 who = "people"
 print(f"{who} is {dirt_object[who]}") # result: people is animals
