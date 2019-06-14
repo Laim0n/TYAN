@@ -19,7 +19,7 @@ def loads(data):
     return json.loads(convert_json_to_tyan(data))
 
 
-def convert_json_to_tyan(data):
+def convert_tyan_to_json(data):
     warnings.simplefilter(action='ignore', category=FutureWarning)
     reg = re.compile('([[] ?((["\'].+["\'])+ ?,? ?)+[]] ?: ?["\'].+["\'] ?,?)')
 
